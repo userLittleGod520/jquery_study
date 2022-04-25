@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>动起来</button>
+    <div></div>
+    <script>
+        // animate自定义动画  以对象方式来写
+        $(function() {
+            $('button').click(function() {
+                $('div').animate({
+                    left: 100,
+                    top: 200,
+                    opacity: 0.3,
+                    width: 500,
+                }, 500)
+            })
+        })
+    </script>
+</body>
+
+</html>

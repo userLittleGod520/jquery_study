@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 20px auto;
+        }
+        
+        ul li {
+            margin-left: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我是第一个li</li>
+        <li>我是第二个li</li>
+        <li>我是第三个li</li>
+        <li>我是第四个li</li>
+    </ul>
+    <p>我是屁</p>
+    <script>
+        $(function() {
+            $('div').on({
+                click: function() {
+                    alert('123');
+                },
+                // mouseenter: function() {
+                //     alert('123');
+                // }
+            });
+
+            //  1、事件解除 off()
+            //  2、one() 但是它只能触发事件一次
+            $('div').off(); // 这个是解除了div身上的所有事件
+            // 解除单个事件
+            $('div').off('click'); // 单独解除div的点击事件
+            $('ul').on('click', 'li', function() {
+                alert(11);
+            })
+            $('ul').off('click', 'li'); // 解除事件委托
+            $('ul').off(); // ul所有事件处理程序
+            $('ul').off('click'); // 解除ul 里面click事件
+            $('p').one({
+                click: function() {
+                    alert(123);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

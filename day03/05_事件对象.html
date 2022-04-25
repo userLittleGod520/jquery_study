@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            margin: 0 auto;
+        }
+        
+        span {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: Red;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span>冒泡</span>
+    <script>
+        //jQuery的事件对象
+        // 根据事件冒泡会 冒泡到上层
+        $(function() {
+            $('div').on('click', function(event) {
+                console.log(event);
+            });
+            // 阻止事件冒泡默认行为  event.stopPropagation() 或者 return false
+            // 阻止事件默认行为      event.preventDefault() 
+            $(document).click('click', function() {
+                console.log(document);
+            })
+            $('span').on('click', function(event) {
+                console.log('span');
+                // console.log(event);
+                // event.stopPropagation(); // 阻止事件冒泡默认行为
+            })
+        })
+    </script>
+</body>
+
+</html>

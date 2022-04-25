@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 940px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px;
+        }
+        
+        .box ul {
+            width: 940px;
+            height: 70px;
+            background-color: gainsboro;
+        }
+        
+        .box ul li {
+            float: left;
+            list-style-type: none;
+        }
+        
+        .box ul li a {
+            text-decoration: none;
+            line-height: 70px;
+            color: black;
+            padding: 20px;
+            /* background-color: red; */
+        }
+        
+        .content-item {
+            display: none;
+        }
+        
+        .active {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="active"><a href="#">商品介绍</a></li>
+            <li><a href="#">规格与包装</a></li>
+            <li><a href="#">售后保障</a></li>
+            <li>
+                <a href="#">商品介绍</a>
+            </li>
+            <li><a href="#">手机社区</a></li>
+        </ul>
+        <div class="content">
+            <div class="content-item" style="display:block">
+                <p>商品介绍</p>
+            </div>
+            <div class="content-item">
+                <p>规格与包装</p>
+            </div>
+            <div class="content-item">
+                <p>售后保障</p>
+            </div>
+            <div class="content-item">
+                <p>商品评价</p>
+            </div>
+            <div class="content-item">
+                <p>手机社区</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // var box = document.querySelector('.box');
+        // var lis = box.querySelectorAll('li');
+        // console.log(lis);
+        // var item = document.querySelectorAll('.content-item');
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].setAttribute('index', i);
+        //     lis[i].addEventListener('mouseover', function() {
+        //         for (var i = 0; i < lis.length; i++) {
+        //             lis[i].className = '';
+        //         }
+        //         this.className = 'active';
+        //         var index = this.getAttribute('index');
+        //         for (var i = 0; i < item.length; i++) {
+        //             item[i].style.display = 'none';
+        //         }
+        //         item[index].style.display = 'block';
+        //     })
+        // }
+
+
+
+        // jQuery语法
+        // 1、 点击li 添加类名 active  其他兄弟移除类名
+        // 2、点击的同时  得到当前li的 索引号
+        // 3、让显示部分的索引号相对应显示  其他隐藏
+        $(function() {
+            $('ul li').mouseover(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                var index = $(this).index();
+                $('.content-item').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

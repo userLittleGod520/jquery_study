@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        li {
+            margin-left: 100px;
+        }
+        
+        .test {
+            width: 200px;
+            height: 200px;
+            background-color: Red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+    </ul>
+    <div class='test'>
+    </div>
+    <script>
+        // 遍历 创建  添加 删除 元素操作
+        $(function() {
+            // 内部添加 添加在元素的内部  父子关系
+            // 1、创建元素 var li  = $('<li></li>')  //创建了li标签
+            var li = $('<li>内部添加   append我放后面</li>');
+            var li2 = $('<li>内部添加  prepend我放前面</li>')
+            $('ul').append(li); // 我放在后面
+            $('ul').prepend(li2); // 我放在前面
+
+            // 外部添加 添加在元素的外部 兄弟关系 after  before
+            var div = $('<div>外部添加  after我放后面 </div>');
+            var div2 = $('<div>外部添加  prepend我放前面 </div>');
+            $('.test').after(div);
+            $('.test').before(div2);
+
+
+            // 删除元素   
+            // 1、element.remove()  删除元素本身 删除自己   
+            // 2、element.empty()   删除元素子级 删除孩子，保留自己
+            // 3、element.html(''); 删除元素子节点 删除孩子，保留自己
+            $('ul').remove();
+            $('ul').empty();
+            $('ul').html('');
+        })
+    </script>
+</body>
+
+</html>

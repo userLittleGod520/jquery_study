@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .box {
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        
+        .nav,
+        .img {
+            float: left;
+        }
+        
+        img {
+            margin-left: 100px;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .nav li a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-bottom: 1px solid red;
+            line-height: 50px;
+            text-align: center;
+            color: black;
+        }
+        
+        .nav li a:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(function() {
+            $('.nav>li').mouseenter(function() {
+                var index = $(this).index();
+                // console.log(index);
+                $('.img div').eq(index).show();
+                $('.img div').eq(index).siblings().hide();
+            })
+        })
+    </script>
+    <div class="box">
+        <ul class="nav">
+            <li>
+                <a href="#">湖人</a>
+            </li>
+            <li>
+                <a href="#">勇士</a>
+            </li>
+            <li>
+                <a href="#">骑士</a>
+            </li>
+            <li>
+                <a href="#">掘金</a>
+            </li>
+            <li>
+                <a href="#">篮网</a>
+            </li>
+        </ul>
+        <div class="img">
+            <div>
+                <a href="#"><img src="./demo/image/laker.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./demo/image/勇士.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./demo/image/骑士.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./demo/image/掘金.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="#"><img src="./demo/image/布鲁克林篮网.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

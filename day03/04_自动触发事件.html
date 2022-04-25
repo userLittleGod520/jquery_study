@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        button {
+            position: relative;
+            top: 100px;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击我</button>
+    <input type="text">
+    <script>
+        // trigger() 自动触发事件 比如轮播图自动播放功能和点右侧按钮一样， 
+        // 可以利用定时器 自动触发右侧按钮点击事件  不必鼠标点击触发
+        // 第一种 :element.click('事件类型'); // 简写形式
+
+        // 第二种 :element.trigger('事件类型');  // 第二种自动触发模式
+
+        // 第三种 :element.triggerHandler('事件类型'); // 第三种自动触发事件  不会触发元素默认行为
+        $(function() {
+            $('button').on('click', function() {
+                alert(123);
+            });
+            // 自动触发事件
+            // 1 、$('button').click();
+            // 2、$('button').trigger('click');
+
+            // $('input').focus(); //鼠标光标会闪烁
+            // $('input').trigger('focus'); 自动触发 元素事件类型
+            $('input').on('focus', function() {
+                $(this).val('你好吗?');
+            });
+            // $('input').focus(); // 触发元素默认行为
+            // $('input').trigger('focus'); // 会触发元素默认行为
+            // $('input').triggerHandler('focus'); // 不会元素默认行为
+        })
+    </script>
+</body>
+
+</html>

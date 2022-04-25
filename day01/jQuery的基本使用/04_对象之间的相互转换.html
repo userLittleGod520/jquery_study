@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+</head>
+
+<body>
+    <video src="./demo/1.mp4" muted></video>
+    <script>
+        // 1、DOM对象转换为 jQuery对象
+        var video = document.querySelector('video');
+        // $(video).play; // jquery 没有play方法
+        // video.play();
+
+
+        // 2、jQuery对象转换为 DOM对象
+
+        // 2(1)、转换1  $('div')[index];
+        // $('video')[0].play();
+
+
+        // 2(2) 转换2  $('div').get(index);
+        $('video').get(0).play();
+        // $('video');
+    </script>
+</body>
+
+</html>

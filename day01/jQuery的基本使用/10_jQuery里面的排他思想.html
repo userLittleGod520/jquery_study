@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <script>
+        // jQuery里面的排他思想
+        $(function() {
+            // 1、隐式迭代  给所有按钮添加 click
+            $('button').click(function() {
+                // 2、当前元素变化背景颜色
+                $(this).css('background', 'pink');
+                // 3、去除其余的兄弟颜色
+                $(this).siblings("button").css('background', '');
+            });
+        })
+    </script>
+</body>
+
+</html>

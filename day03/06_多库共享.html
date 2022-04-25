@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        // 因为jQuery的$ 作为标示符  而其他的js库的 $作为标识符 这样一起使用会 引起冲突
+        // 需要使用  多库共享
+        // jQuery解决方法
+        // 1、把里面的$符号 统一改为 jQuery，比如 jQuery('div');
+        // 2、jQuery变量 规定新的名称: $.onConflict()  var xx = $.noConflict(); 让用户自己决定
+        $(function() {
+            function $(ele) {
+                return document.querySelector(ele);
+            }
+            console.log($('div'));
+            // 1、如果$ 符号冲突了 就用jQuery
+            // 2、让jQuery 释放对$ 的控制权 让用户自己定义
+            var suibian = jQuery.noConflict();
+            console.log(suibian('span'));
+        })
+    </script>
+</body>
+
+</html>

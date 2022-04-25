@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .box {
+            width: 500px;
+            height: 400px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #text {
+            margin-left: 60px;
+        }
+        
+        .info {
+            width: 200px;
+            height: 100px;
+            /* background-color: Red; */
+            margin: 0 auto;
+        }
+        
+        li {
+            list-style: none;
+            border-bottom: 1px dashed red;
+            margin: 15px;
+        }
+        
+        a {
+            display: block;
+            text-decoration: none;
+            color: red;
+            text-align: right;
+            margin-top: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>发布信息</h1>
+        <textarea name="" id="text" cols="50" rows="15"></textarea>
+        <input type="button" value="发布" class="btn">
+        <ul class="info"></ul>
+    </div>
+    <script>
+        // $(function() {
+        //     $('.btn').click(function() {
+        //         // 创建li
+        //         var li = $('<li></li>');
+        //         li.html($('#text').val() + '<a href ="javascript:;">删除</a>');
+        //         $('.info').prepend(li);
+        //         li.slideDown();
+        //         $('#text').val('');
+        //     });
+        //     // 删除留言案例
+        //     // $('ul a').click(function() {  // click 不能给未创建的元素添加事件
+        //     //     alert(123);
+        //     // })
+        //     $('.info').on('click', 'a', function() {
+        //         $(this).parent().slideUp(function() {
+        //             $(this).remove();
+        //         });
+        //     })
+        // })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            margin: 100px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function() {
+            var arr = ['red', 'green', 'blue'];
+            var sum = 0;
+            $('div').each(function(index, domEle) {
+                // 回调函数第一个参数一定是索引号  可以自己指定索引号名称
+                console.log(index);
+
+                // 第二个参数是一定是DOM元素对象 DOM对象不能设置 jQuery方法
+                console.log(domEle);
+                // domEle.css('color');
+                // domEle.style.color = 'red'; // 不能直接设置样式 要转换对象
+                $(domEle).css('color', arr[index]);
+                sum += parseInt($(domEle).text()); // 6
+                console.log(sum);
+            })
+
+            // 2、方法二 $.each() 遍历 任何对象
+            $.each($('div'), function(i, ele) {
+                console.log(i);
+                console.log(ele);
+            })
+
+
+            $.each(arr, function(i, ele) {
+                console.log(i);
+                console.log(ele);
+            })
+
+            $.each({
+                name: 'lishen',
+                age: 19,
+                hello: 'good'
+            }, function(i, ele) {
+                console.log(i);
+                console.log(ele);
+            })
+        })
+
+
+        // 2个方法的不同之处
+        // 写法不一样
+        // $.each() 主要用于遍历 数据的  处理数据  跟for in 差不多
+        // $.each(arr, function(i, ele) {
+        //     console.log(i);
+        //     console.log(ele);
+        // })
+    </script>
+</body>
+
+</html>

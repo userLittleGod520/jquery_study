@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <script>
+        // 1、获取页面div元素
+        $('div').css('background-color', 'pink');
+        // 2、给div上色 jquery 不能使用 style
+        // 3、隐式迭代就是 把匹配所有元素内部进行遍历循环，给每个元素添加 css方法
+        $('ul>li').css('width', '200px');
+        $('ul>li').css('height', '200px');
+        $('ul>li').css('background', 'red');
+        $('ul>li').css('margin', '10px');
+    </script>
+</body>
+
+</html>

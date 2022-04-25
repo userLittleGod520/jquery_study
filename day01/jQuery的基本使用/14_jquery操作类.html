@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        
+        .cruuent {
+            background-color: green;
+            transform: rotate(360deg);
+            transition: all .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cruuent"></div>
+    <script>
+        // jquery 操作类 1、addClass  2、removeClass  3、toggleClass
+        $(function() {
+            // 1、添加类名 addClass
+            // $('div').click(function() { 
+            //         $('div').addClass('cruuent');
+            //     })
+            // 2、移除类名 removeClass
+            // $('div').click(function() {
+            //     $('div').removeClass('cruuent');
+            // })
+
+            // 3、切换类名 toggleClass  点击添加  点击取消  来回切换
+            $('div').click(function() {
+                $('div').toggleClass('cruuent');
+            })
+        })
+    </script>
+</body>
+
+</html>

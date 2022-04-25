@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // $.extend() 方法
+        // $.extend([deep],target,object1,[objectN]);
+        // deep:true 深拷贝  默认为false 浅拷贝
+        // 浅拷贝会把原来对象里面的复杂数据类型的‘地址’ 拷贝给目标对象 修改目标对象也会修改拷贝前原来的对象 因为它们2个指向同一个地址
+        // 深拷贝会把数据完全复制一份给目标对象，如果目标不冲突会合并到一起！ 因为目标对象会开辟新空间去接收
+        // target: 拷贝的目标对象
+        // object1: d拷贝过去的对象
+        $(function() {
+            var targetObj = {
+                id: 0,
+                msg: {
+                    sex: '男',
+                }
+            };
+            var obj = {
+                    id: 1,
+                    name: '李神',
+                    msg: {
+                        age: 18,
+                    }
+                }
+                // 拷贝过去
+                // $.extend(targetObj, obj); // 浅拷贝 会覆盖 targetObj里面 原来的数据
+                // console.log(targetObj);
+            $.extend(true, targetObj, obj); // 深拷贝 不冲突 不会覆盖 目标对象里面的数据
+            targetObj.age = 20; // 只修改目标对象 不会修改拷贝前对象
+            console.log(targetObj);
+            console.log(obj);
+        })
+    </script>
+</body>
+
+</html>

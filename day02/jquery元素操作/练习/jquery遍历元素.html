@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 20px auto;
+            font-size: 100px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function() {
+            var arr = ['red', 'green', 'yellow'];
+            // 遍历元素方法  1、遍历DOM元素  each() 方法 形参里面必须是(索引号,DOM元素)
+            $('div').each(function(index, docEle) {
+                    console.log(index);
+                    console.log(docEle);
+                    $(this).css('color', arr[index]);
+                })
+                // 2、遍历数据 $.each($('选择器'),索引号和数据)
+            $.each($('div'), function(i, obj) {
+                console.log(i);
+                console.log(obj);
+                $(this).css('backgroundColor', arr[i]);
+            })
+        })
+    </script>
+</body>
+
+</html>

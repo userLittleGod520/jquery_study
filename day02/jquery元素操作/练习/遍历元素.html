@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function() {
+            var arr = ['red', 'green', 'blue'];
+            // 1、遍历DOM元素
+            $('div').each(function(i, docEle) {
+                console.log(i);
+                console.log(docEle);
+                $(docEle).css('color', arr[i]);
+            });
+
+            // 2、遍历数据，处理数据
+            $.each(arr, function(i, docEle) {
+                console.log(i);
+                console.log(docEle);
+            })
+        })
+    </script>
+</body>
+
+</html>

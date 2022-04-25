@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        // jQuery操作 css方法
+        $(function() {
+            // 不加参数 则返回属性值
+            console.log($('div').css('width'));
+            // 设置多个样式
+            $('div').css('width', '250px');
+            // 使用对象 里面参数不用引号
+            $('div').css({
+                width: 500,
+                height: 500,
+                backgroundColor: 'red',
+            })
+        })
+    </script>
+</body>
+
+</html>

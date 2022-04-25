@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            position: relative;
+        }
+        
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: Red;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .bg {
+            width: 1300px;
+            height: 1000px;
+            background-color: aqua;
+            margin: 0 auto;
+        }
+        
+        span {
+            position: absolute;
+            bottom: 400px;
+            right: 100px;
+            display: block;
+            width: 20px;
+            height: 100px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="bg">页面被卷盒子
+    </div>
+    <span>返回顶部</span>
+    <script>
+        // 获取设置 元素位置
+        //  1、offset() 设置和获取元素偏移量 相对于文档的偏移 跟父级没有关系
+        //  2、position() 获取带有定位的父级坐标  不能设置值
+        //  3、scrollTop() 和scrollLeft 元素被页面卷去的头部和侧边 可以获取 可以传参数
+        $(function() {
+            console.log($('.son').offset());
+            // $('.son').offset({
+            //     left: 100,
+            //     top: 200,
+            // })
+            console.log($('.son').position());
+            // bg距离页面顶部的位置
+            var boxTop = $('.bg').offset().top;
+            $(document).scrollTop(100);
+            console.log(boxTop);
+            $(window).scroll(function() {
+                // console.log(11);
+                // console.log($(document).scrollTop());
+                // 页面被卷去的头部
+                if ($(document).scrollTop() >= boxTop) {
+                    $('span').show();
+                } else {
+                    $('span').hide();
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
